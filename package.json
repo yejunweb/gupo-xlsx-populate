@@ -1,0 +1,26 @@
+{
+  "name": "gupo-xlsx-populate",
+  "version": "1.0.0",
+  "description": "A tool for export excle",
+  "main": "lib/bundle.cjs.js",
+  "module": "lib/bundle.esm.js",
+  "browser": "lib/bundle.browser.js",
+  "scripts": {
+    "build": "rollup --config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yejun",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.75.7",
+    "rollup-plugin-babel": "^4.4.0",
+    "xlsx-populate": "^1.21.0"
+  }
+}
