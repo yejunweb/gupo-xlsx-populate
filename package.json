@@ -5,9 +5,14 @@
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
   "browser": "lib/bundle.browser.js",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "build": "rollup --config",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "yarn build && yarn release",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "yejun",
@@ -21,6 +26,10 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "rollup": "^2.75.7",
     "rollup-plugin-babel": "^4.4.0",
+    "standard-version": "^9.5.0",
     "xlsx-populate": "^1.21.0"
+  },
+  "publishConfig": {
+    "registry": "https://packages.aliyun.com/5eb3e37038076f00011bcd4a/npm/npm-registry/"
   }
 }
