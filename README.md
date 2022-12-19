@@ -4,8 +4,13 @@
 
 ## 安装
 
+### yarn
 ```
-yarn add xlsx-populate or install
+yarn add gupo-xlsx-populate
+```
+### npm
+```
+npm install gupo-xlsx-populate
 ```
 
 ## 举个栗子
