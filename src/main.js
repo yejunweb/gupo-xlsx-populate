@@ -13,6 +13,7 @@ const main = async (options) => {
         dataSource,
         stripe,
         border,
+        wrapText,
         rowHeight,
         columnWidth,
         verticalAlignment,
@@ -56,7 +57,9 @@ const main = async (options) => {
                 ...(border && {
                     border,
                 }),
-                wrapText: true,
+                ...(wrapText && {
+                    wrapText
+                }),
                 verticalAlignment: verticalAlignment || 'center',
                 horizontalAlignment: horizontalAlignment || 'left',
             })
