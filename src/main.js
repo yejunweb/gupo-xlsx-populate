@@ -3,6 +3,7 @@
  * https://github.com/dtjohnson/xlsx-populate/blob/master/README.md#style-reference
  */
 import XlsxPopulate from 'xlsx-populate/browser/xlsx-populate'
+import getColumnWidth from './utils/GetColumnWidth'
 import dataFormat from './utils/DataFormat.js'
 import columnMap from './utils/ColumnMap.js'
 import saveAs from './utils/SaveAs.js'
@@ -48,6 +49,10 @@ const main = async (options) => {
     }
     sheet.cell('A1').value(sheetContent)
 
+    // 获取列自适应宽度
+    let autoWidthList = []
+    if (!columnWidth) autoWidthList = getColumnWidth(sheetContent)
+
     // 设置表格样式
     for (let i = 1; i <= sheetContent.length; i++) {
         rowHeight && sheet.row(i).height(rowHeight)
@@ -63,7 +68,9 @@ const main = async (options) => {
                 horizontalAlignment: horizontalAlignment || 'left',
             })
             if (i === 1) {
-                columnWidth && sheet.column(columnMap[j]).width(columnWidth)
+                sheet
+                    .column(columnMap[j])
+                    .width(columnWidth || autoWidthList[j - 1])
                 sheet.cell(`${columnMap[j]}${i}`).style({
                     bold: true,
                     fill: 'f0f0f0',
