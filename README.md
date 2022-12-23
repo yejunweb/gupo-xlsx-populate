@@ -47,14 +47,14 @@ ExportExcel({
 
 | 参数名称                | 类型            | 描述                                       |
 | ------------------- | ------------- | ---------------------------------------- |
-| name                | String        | 导出的表格名称                                  |
+| name                | String        | 导出的表格名称，默认为时间戳                           |
 | dataConfig          | Object、Array  | 数据源配置                                    |
 | dataSource          | Array         | 数据源                                      |
 | stripe              | Boolean       | 是否为斑马纹，默认`'false'`                       |
 | border              | Boolean       | 是否带有边框，默认`'false'`                       |
 | wrapText            | Boolean       | 是否换行，默认`'false'`                         |
-| rowHeight           | String、Number | 行高                                       |
-| columnWidth         | String、Number | 列宽                                       |
+| rowHeight           | String、Number | 行高，默认`'auto'`                            |
+| columnWidth         | String、Number | 列宽，默认`'auto'`                            |
 | verticalAlignment   | String        | 单元格垂直居中，可选值： `'top'`, `'center'`, `'bottom'`, `'justify'`, `'distributed'`，默认`'center'` |
 | horizontalAlignment | String        | 单元格水平居中，可选值： `'left'`, `'center'`, `'right'`, `'fill'`, `'justify'`, `'centerContinuous'`, `'distributed'`，默认`'left'` |
 
