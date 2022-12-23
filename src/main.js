@@ -3,6 +3,7 @@
  * https://github.com/dtjohnson/xlsx-populate/blob/master/README.md#style-reference
  */
 import XlsxPopulate from 'xlsx-populate/browser/xlsx-populate'
+import dataFormat from './utils/DataFormat.js'
 import columnMap from './utils/ColumnMap.js'
 import saveAs from './utils/SaveAs.js'
 
@@ -31,8 +32,8 @@ const main = async (options) => {
             ...dataSource.map((item) => {
                 return dataConfig.map(({ prop, setValue }) => {
                     return setValue
-                        ? setValue(item?.[prop]) || ''
-                        : item?.[prop] || ''
+                        ? dataFormat(setValue(item?.[prop]))
+                        : dataFormat(item?.[prop])
                 })
             })
         )
@@ -45,9 +46,7 @@ const main = async (options) => {
             })
         )
     }
-    sheet
-        .range(`A1:${columnMap[sheetContent[0].length]}${sheetContent.length}`)
-        .value(sheetContent)
+    sheet.cell('A1').value(sheetContent)
 
     // 设置表格样式
     for (let i = 1; i <= sheetContent.length; i++) {
@@ -58,7 +57,7 @@ const main = async (options) => {
                     border,
                 }),
                 ...(wrapText && {
-                    wrapText
+                    wrapText,
                 }),
                 verticalAlignment: verticalAlignment || 'center',
                 horizontalAlignment: horizontalAlignment || 'left',
