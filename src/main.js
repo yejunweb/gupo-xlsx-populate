@@ -5,7 +5,7 @@
 import XlsxPopulate from 'xlsx-populate/browser/xlsx-populate'
 import getColumnWidth from './utils/GetColumnWidth'
 import dataFormat from './utils/DataFormat.js'
-import columnMap from './utils/ColumnMap.js'
+import { getColumnName } from './utils/GetColumnName.js'
 import saveAs from './utils/SaveAs.js'
 
 const main = async (options) => {
@@ -57,7 +57,7 @@ const main = async (options) => {
     for (let i = 1; i <= sheetContent.length; i++) {
         rowHeight && sheet.row(i).height(rowHeight)
         for (let j = 1; j <= sheetContent[0].length; j++) {
-            sheet.cell(`${columnMap[j]}${i}`).style({
+            sheet.cell(`${getColumnName(j - 1)}${i}`).style({
                 ...(border && {
                     border,
                 }),
@@ -69,16 +69,16 @@ const main = async (options) => {
             })
             if (i === 1) {
                 sheet
-                    .column(columnMap[j])
+                    .column(getColumnName(j - 1))
                     .width(columnWidth || autoWidthList[j - 1])
-                sheet.cell(`${columnMap[j]}${i}`).style({
+                sheet.cell(`${getColumnName(j - 1)}${i}`).style({
                     bold: true,
                     fill: 'f0f0f0',
                 })
             }
             // 斑马纹
             if (stripe && (i + 1) % 2 === 0) {
-                sheet.cell(`${columnMap[j]}${i}`).style({
+                sheet.cell(`${getColumnName(j - 1)}${i}`).style({
                     fill: 'f0f0f0',
                 })
             }

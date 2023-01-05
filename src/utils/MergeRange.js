@@ -7,7 +7,7 @@
  * 则合并将会从当前数组的 0 开始到 3
  * 本方法将数组中记录的位置映射为单元格区域 并执行合并操作
  */
-import columnMap from './ColumnMap'
+import { getColumnName } from './utils/GetColumnName.js'
 
 const mergeRange = (sheet, sheetContent) => {
     var mergeRangeList = []
@@ -17,9 +17,13 @@ const mergeRange = (sheet, sheetContent) => {
             if (cell === null) {
                 if (!nullRangeList.length) {
                     // 添加合并单元格开始位置
-                    nullRangeList.push(`${columnMap[cellIndex]}${rowIndex + 1}`)
+                    nullRangeList.push(
+                        `${getColumnName(cellIndex - 1)}${rowIndex + 1}`
+                    )
                 }
-                nullRangeList.push(`${columnMap[cellIndex + 1]}${rowIndex + 1}`)
+                nullRangeList.push(
+                    `${getColumnName(cellIndex + 1)}${rowIndex + 1}`
+                )
                 if (cellIndex + 2 > row.length) {
                     // 执行到每行末尾时
                     mergeRangeList.push(nullRangeList)
