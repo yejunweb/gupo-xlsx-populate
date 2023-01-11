@@ -26,6 +26,7 @@ const main = async (options) => {
     const workbook = await XlsxPopulate.fromBlankAsync()
     const sheet = workbook.sheet(0)
     const sheetContent = []
+    const sheetStyleList = []
     if (Array.isArray(dataConfig)) {
         // 数组类型配置
         sheetContent[0] = dataConfig.map(({ label }) => label)
@@ -37,6 +38,9 @@ const main = async (options) => {
                         : dataFormat(item?.[prop])
                 })
             })
+        )
+        sheetStyleList = dataConfig.map(
+            ({ label, prop, setValue, ...data }) => data
         )
     } else {
         // 对象类型配置
@@ -66,6 +70,8 @@ const main = async (options) => {
                 }),
                 verticalAlignment: verticalAlignment || 'center',
                 horizontalAlignment: horizontalAlignment || 'left',
+                // 附加样式
+                ...sheetStyleList[j - 1],
             })
             if (i === 1) {
                 sheet
