@@ -39,8 +39,8 @@ const main = async (options) => {
                 })
             })
         )
-        sheetStyleList = dataConfig.map(
-            ({ label, prop, setValue, ...data }) => data
+        sheetStyleList.push(
+            ...dataConfig.map(({ label, prop, setValue, ...data }) => data)
         )
     } else {
         // 对象类型配置
