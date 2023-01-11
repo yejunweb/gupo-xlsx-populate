@@ -59,8 +59,9 @@ ExportExcel({
 | horizontalAlignment | String       | 单元格水平居中，可选值： `'left'`, `'center'`, `'right'`, `'fill'`, `'justify'`, `'centerContinuous'`, `'distributed'`，默认`'left'` |
 
 ### dataConfig[Array]
-| 参数名称     | 类型       | 描述     |
-| -------- | -------- | ------ |
-| label    | String   | 表头名称   |
-| prop     | String   | 数据配置   |
-| setValue | Function | 数据配置方法 |
+| 参数名称     | 类型       | 描述                                       |
+| -------- | -------- | ---------------------------------------- |
+| label    | String   | 表头名称                                     |
+| prop     | String   | 数据配置                                     |
+| setValue | Function | 数据配置方法                                   |
+| ...      | ...      | 支持传入xlsx-populate所支持的样式显示，[参考文档](https://github.com/dtjohnson/xlsx-populate/blob/master/README.md#style-reference) |
