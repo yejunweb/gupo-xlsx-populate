@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/compare/v1.3.0...v1.4.0) (2023-01-11)
+
+
+### Features
+
+* add custom cell style ([7332c5c](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/commit/7332c5cfc997feb910e2c06f63296e31b97c3e73))
+* optimize getColumnName method ([0a3996b](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/commit/0a3996b79314f9e7c40fbe3ee7ed0ab937cf0dc3))
+
 ## [1.3.0](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/compare/v1.2.1...v1.3.0) (2022-12-23)
 
 
