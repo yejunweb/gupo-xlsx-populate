@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/compare/v1.4.0...v1.4.1) (2023-01-11)
+
+
+### Bug Fixes
+
+* variable declaration ([70ffebb](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/commit/70ffebb2fb17fe304eee8d61e289c436510d615e))
+
 ## [1.4.0](https://codeup.aliyun.com/gupo/node-modules/gupo-xlsx-populate/compare/v1.3.0...v1.4.0) (2023-01-11)
 
 
