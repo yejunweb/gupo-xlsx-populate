@@ -28,8 +28,5 @@
     "rollup-plugin-babel": "^4.4.0",
     "standard-version": "^9.5.0",
     "xlsx-populate": "^1.21.0"
-  },
-  "publishConfig": {
-    "registry": "https://packages.aliyun.com/5eb3e37038076f00011bcd4a/npm/npm-registry/"
   }
 }
