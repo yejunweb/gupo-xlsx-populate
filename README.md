@@ -2,6 +2,9 @@
 
 基于[xlsx-populate](https://github.com/dtjohnson/xlsx-populate)进行封装，通过简单的调用方式实现导出Excle文件
 
+[![npm package](https://img.shields.io/npm/v/gupo-xlsx-populate.svg)](https://npmjs.org/package/gupo-xlsx-populate)
+[![npm downloads](http://img.shields.io/npm/dm/gupo-xlsx-populate.svg)](https://npmjs.org/package/gupo-xlsx-populate)
+
 ## 安装
 
 ### yarn
